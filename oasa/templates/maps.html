@@ -1,0 +1,56 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<p class ="text-primary pathTitle"><a href="{% url 'home' %}">Αρχική σελίδα</a> > Χάρτες</p>
+
+<html>
+	<body>
+
+	<br>
+	<br>
+
+<strong style="margin-left:20%; ">Παρακάτω μπορείτε να δείτε τον χάρτη του Μετρό, του Ηλεκτρικού και του Τραμ της Αθήνας.</strong>
+
+	<br>
+	<br>
+	<br>
+
+<ul class="list-inline gallery">
+	<li><img class="thumbnail zoom" src="{% static 'metro-map2.png' %} " id="metro-map"  width="500" height="600" ></li>
+</ul>
+
+<!img src="{% static 'metro-map.png' %}" alt="metro-map" width="10" height="10">
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<p style="margin-left:20%; font-family:Arial; font-weight:bold;">Παρακάτω μπορείτε να δείτε τον χάρτη των περιοχών που εξυπηρετει ο ΟΑΣΑ στην Αθήνα.</p>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<ul class="list-inline gallery">
+	<li><img class="thumbnail zoom" src="{% static 'mapeuthinis.png' %} " id="mapeuthinis"  width="500" height="600" ></li>
+
+
+	</body>
+</html>
+		<!--  Raw HTML content: [begin] -->
+			<!-- iframe scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.gr/maps/ms?msa=0&amp;msid=211563714338455793712.0004cf161cb80a319d541&amp;ie=UTF8&amp;hl=en&amp;t=m&amp;ll=37.968831,23.741112&amp;spn=0.129915,0.219727&amp;z=12&amp;output=embed" width="640" height="480" frameborder="0"></..iframe><br><small><a href="https://maps.google.gr/maps/ms?msa=0&amp;msid=211563714338455793712.0004cf161cb80a319d541&amp;ie=UTF8&amp;t=m&amp;ll=37.968831,23.741112&amp;spn=0.129915,0.219727&amp;z=12&amp;source=embed" style="color:#0000FF;text-align:left">View the map on Google maps</a></small -->
+
+
+		<!--  Raw HTML content: [end] -->
+
+
+
+
+{% endblock %}

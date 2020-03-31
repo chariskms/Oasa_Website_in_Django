@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+
+<div class=" ">
+    <p class ="text-primary pathTitle"><a href="{% url 'home' %}">Αρχική σελίδα</a> > Δρομολόγια</p>
+        <nav  title="Δρομολόγια">
+            <div class="nav nav-tabs navbar-expand-sm rounded-lg" id="nav-tab" role="tablist">
+
+                <a class="nav-item nav-link active itinerariesMenu" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">Μετρό</a>
+                <a class="nav-item nav-link itinerariesMenu" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">Λεωφορεία</a>
+                <a class="nav-item nav-link itinerariesMenu" id="nav-contact-tab" data-toggle="tab" href="#nav-contact" role="tab" aria-controls="nav-contact" aria-selected="false">Τραμ</a>
+                <a class="nav-item nav-link itinerariesMenu" id="perioxi-tab" data-toggle="tab" href="#perioxi" role="tab" aria-controls="perioxi" aria-selected="false">Περιοχή</a>
+                <a class="nav-item nav-link itinerariesMenu" id="stasi-tab" data-toggle="tab" href="#stasi" role="tab" aria-controls="stasi" aria-selected="false">Στάση</a>
+            </div>
+
+        </nav>
+    <nav>
+        <div class="tab-content rounded-lg" id="nav-tabContent" >
+            <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+                <!-- Default inline 1-->
+                <form action="metroStations" method=" ">
+                    <h4 id="metroRadioLabelId">Επιλέξτε την γραμμή</h4>
+                    <div class="custom-control custom-radio custom-control-inline metroLine">
+                        <input type="radio" class="custom-control-input" id="defaultInline1" name="line" value="1">
+                        <label class="custom-control-label" for="defaultInline1">Γραμμή 1</label>
+                    </div>
+
+                    <!-- Default inline 2-->
+                    <div class="custom-control custom-radio custom-control-inline metroLine">
+                       <input type="radio" class="custom-control-input" id="defaultInline2" name="line" value="2">
+                        <label class="custom-control-label" for="defaultInline2">Γραμμή 2</label>
+                    </div>
+
+                    <!-- Default inline 3-->
+                    <div class="custom-control custom-radio custom-control-inline metroLine">
+                         <input type="radio" class="custom-control-input" id="defaultInline3" name="line" value="3">
+                         <label class="custom-control-label" for="defaultInline3">Γραμμή 3</label>
+                    </div>
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit" >Search</button>
+                    <div class="displ displMetro">
+                     {% if requested3 %}
+                        <p class="helveticaFont "><small>Βρέθηκαν {{ len }} αποτελέσματα για την αναζήτησή σας <mark>{{ requested3 }}</mark>:</small></p>
+                        {% for StationName in results %}
+                            <h4 class="helveticaFont"><small>{{ StationName }}</small></h4>
+                        {% endfor %}
+                     {% endif %}
+                     </div>
+
+
+                </form>
+
+
+
+
+                <!--
+                <h4 id="metroDepartureId">Αναχώρηση</h4>
+                <ul class="nav nav-tabs rounded-lg" id="myTab" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="Tab1" data-toggle="tab" href="#TabNext" role="tab" aria-controls="TabNext" aria-selected="true">Επόμενο</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Tab2" data-toggle="tab" href="#TabLater" role="tab" aria-controls="TabLater" aria-selected="false">Αργότερα</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="Tab3" data-toggle="tab" href="#TabFirstLast" role="tab" aria-controls="TabFirstLast" aria-selected="false">Πρώτο/Τελευταίο Δρομολόγιο</a>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade show active" id="TabNext" role="tabpanel" aria-labelledby="Tab1">
+                        <h4 id="TabNextIndexId">Ενημερωθείτε για την αναχώρηση του επόμενου συρμού από τον σταθμό που επιλέξατε!</h4>
+                    </div>
+
+                    <div class="tab-pane fade" id="TabLater" role="tabpanel" aria-labelledby="Tab2">
+                        <h4 id="TabLaterIndexId">Ενημερωθείτε για την αναχώρηση του επόμενου συρμού σύμφωνα με την ώρα που έχετε επιλέξει!</h4>
+
+
+                        <html>
+                            <head>
+                                <meta charset="utf-8" />
+                                <title>DateTimePicker example</title>
+                                <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+                                <script src="https://unpkg.com/gijgo@1.9.13/js/gijgo.min.js" type="text/javascript"></script>
+                                <link href="https://unpkg.com/gijgo@1.9.13/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+                            </head>
+                            <body>
+                                <input id="input" width="312" />
+                                <script>
+                                    $('#input').datetimepicker({ footer: true, modal: true });
+                                </script>
+                            </body>
+                        </html>
+
+                    </div>
+
+
+
+                    <div class="tab-pane fade" id="TabFirstLast" role="tabpanel" aria-labelledby="Tab3">...</div>
+                </div>
+                -->
+            </div>
+            <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+                <nav class="navbar navbar-light bg-light ">
+                    <h4 id="busSearchLabelId">Εισάγετε το δρομολόγιο</h4>
+                    <form class="form-inline " action="busStations" method=" ">
+                        <input class="form-control mr-sm-2" name="busline" id = "busSearchId" type="search" placeholder="δρομολόγιο" aria-label="Search" value="{{ request.GET.busline }}">
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                        <div class="displ displMetro">
+                            {% if requested5 %}
+                                <p class="helveticaFont "><small>Βρέθηκαν {{ len }} αποτελέσματα για την αναζήτησή σας <mark>{{ requested5 }}</mark>:</small></p>
+                            {% for StationName in results %}
+                                <h4 class="helveticaFont"><small>{{ StationName }}</small></h4>
+                            {% endfor %}
+                            {% endif %}
+
+                        </div>
+                    </form>
+                </nav>
+            </div>
+
+            <div class="tab-pane fade" id="nav-contact" role="tabpanel" aria-labelledby="nav-contact-tab">
+                <form action="tramStations" method=" ">
+                    <h4 id="tramRadioLabelId">Επιλέξτε την γραμμή</h4>
+                    <div class="custom-control custom-radio custom-control-inline metroLine">
+                        <input type="radio" class="custom-control-input" id="tramInline1" name="tramline" value="1">
+                        <label class="custom-control-label" for="tramInline1">Γραμμή 1</label>
+                    </div>
+
+                    <div class="custom-control custom-radio custom-control-inline metroLine">
+                        <input type="radio" class="custom-control-input" id="tramInline2" name="tramline" value="2">
+                        <label class="custom-control-label" for="tramInline2">Γραμμή 2</label>
+                    </div>
+                    <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                    <div class="displ displMetro">
+                     {% if requested4 %}
+                        <p class="helveticaFont "><small>Βρέθηκαν {{ len }} αποτελέσματα για την αναζήτησή σας <mark>{{ requested4 }}</mark>:</small></p>
+                        {% for StationName in results %}
+                            <h4 class="helveticaFont"><small>{{ StationName }}</small></h4>
+                        {% endfor %}
+                     {% endif %}
+                     </div>
+
+                </form>
+            </div>
+            <div class="tab-pane fade" id="perioxi" role="tabpanel" aria-labelledby="perioxi-tab">
+                <nav class="navbar navbar-light bg-light ">
+                    <h4 id="perioxiSearchLabelId">Εισάγετε την περιοχή</h4>
+                    <form class="form-inline my-2 my-lg-0 metroSearch" action="searchStations" method=" ">
+                        <input class="form-control mr-sm-2" onfocus="this.value=''" id = "perioxiSearchId" name="searchArea" type="search" placeholder="Περιοχή" aria-label="Search" value="{{ request.GET.searchArea }}">
+                        <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+
+                        <div class = "displ">
+
+                            {% if requested %}
+				                <p class="helveticaFont "><small>Βρέθηκαν {{ len }} αποτελέσματα για την αναζήτησή σας <mark>{{ requested }}</mark>:</small></p>
+                                {% for StationName in results %}
+                                    <h4 class="helveticaFont"><small>{{ StationName }}</small></h4>
+				                {% endfor %}
+                            {% endif %}
+
+
+			            </div>
+                    </form>
+                </nav>
+            </div>
+            <div class="tab-pane fade" id="stasi" role="tabpanel" aria-labelledby="stasi-tab">
+                <nav class="navbar navbar-light bg-light ">
+
+                    <form class="form-inline metroSearch" action="searchAStation" method=" ">
+                            <h4 id="stasiSearchLabelId">Εισάγετε την στάση</h4>
+                            <input class="form-control mr-sm-2 "  id = "stasiSearchId" name="Station.Name" type="search" placeholder="Στάση" aria-label="Search" value="{{ request.GET.Station.Name }}">
+
+                            <h4 id="stasiSearchAreaLabelId">Εισάγετε την περιοχή της στάσης</h4>
+                            <input class="form-control mr-sm-2 "  id = "stasiSearchAreaId" type="search" name="Station.Area" placeholder="Περιοχή" aria-label="Search" value="{{ request.GET.Station.Area }}">
+
+                            <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Search</button>
+                            <div class = "displ">
+
+                            {% if requested2 %}
+                                <p class="helveticaFont "><small> Βρέθηκαν {{ len }} αποτελέσματα για την αναζήτησή σας <mark>{{ requested2 }}</mark>:</small></p>
+                                {% if results1 %}
+                                    <h4 class="helveticaFont"><small>Γραμμές λεωφορείου</small></h4>
+                                    {% for lineName in results1 %}
+                                        <h4 class="helveticaFont"><small>{{ lineName }}</small></h4>
+                                    {% endfor %}
+                                {% endif %}
+                                {% if results2 %}
+                                    <h4 class="helveticaFont"><small>Γραμμές Μετρό</small></h4>
+                                    {% for lineName in results2 %}
+                                        <h4 class="helveticaFont"><small>{{ lineName }}</small></h4>
+                                    {% endfor %}
+                                {% endif %}
+                                {% if results3 %}
+                                    <h4 class="helveticaFont"><small>Γραμμές Τραμ</small></h4>
+                                    {% for lineName in results3 %}
+                                        <h4 class="helveticaFont"><small>{{ lineName }}</small></h4>
+                                    {% endfor %}
+                                {% endif %}
+                            {% endif %}
+                            </div>
+
+                        </form>
+
+                </nav>
+            </div>
+
+        </div>
+    </nav>
+</div>
+{% endblock %}

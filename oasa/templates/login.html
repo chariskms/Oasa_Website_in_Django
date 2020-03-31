@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+    <div class="container login-container">
+            <div class="row">
+                <div class="col-md-6 login-form-1">
+                    <h3>Είσοδος Χρήστη</h3>
+                    <form  action="login" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" placeholder="Το Email σου*" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password" placeholder="Επαλήθευση κωδικού*" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Login" />
+                        </div>
+                        <div class="form-group">
+                            <a href="#" class="ForgetPwd">Ξέχασες τον κωδικό σου;</a>
+                        </div>
+                        <div class="form-group">
+                            {% for message in messages %}
+                            <h4>{{ message }}</h4>
+                            {% endfor %}
+                        </div>
+                    </form>
+                </div>
+                <div class="col-md-6 login-form-2">
+                    <h3>Εγγραφή Χρήστη</h3>
+                    <form action="register" method="post">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <input type="email" class="form-control" name="email" placeholder="Το Email σου*" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="first_name" placeholder="Όνομα*" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="text" class="form-control" name="last_name" placeholder="Επώνυμο*" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password1" placeholder="Νέος κωδικός*" value="" />
+                        </div>
+                        <div class="form-group">
+                            <input type="password" class="form-control" name="password2" placeholder="Επαλήθευση κωδικού*" value="" />
+                        </div>
+
+                        <div class="form-group">
+                            <select id="userTypeSelection" name="userType" class="form-control">
+                                <option value="Student"> Φοιτητής</option>
+                                <option value="Elder">Ηλικιωμένος</option>
+                                <option value="Unemployed"> Άνεργος</option>
+                                <option value="Normal">Χωρίς ιδιότητα</option>
+                                <option value="Resellers">Μεταπωλητής</option>
+                            </select>
+                        </div>
+
+
+                        <div class="form-group">
+                            <input type="submit" class="btnSubmit" value="Subscribe" />
+                        </div>
+                        <div class="form-group">
+                            {% for message in messages %}
+                            <h4>{{ message }}</h4>
+                            {% endfor %}
+                        </div>
+
+                    </form>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}

@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<p class ="text-primary pathTitle"><a href="{% url 'home' %}">Αρχική σελίδα</a> > Σχεδιασμός Διαδρομής</p>
+<div class="routeBox2 rounded-lg">
+<form class="border rounded-lg " action="directions" method="get">
+  <div class="form-group">
+    <label for="Input1"> <h5><small  class="text-secondary labelPlanner">Σχεδιάστε τη διαδρομή σας</small></h5></label>
+    <input type="Από" class="form-control" id="Input1" placeholder="Από" name="origin">
+  </div>
+  <div class="form-group">
+    <input type="Προς" class="form-control" id="Input2" placeholder="Προς" name="destination">
+
+
+    <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" checked>
+      <img srcset="{% static 'bus.png' %}" alt="responsive image" class="d-block img-fluid"
+      width=22" height="22">
+    </div>
+
+  <div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" checked>
+  <img srcset="{% static 'metro.png' %}" alt="responsive image" class="d-block img-fluid"
+      width=22" height="22">
+  </div>
+
+  <div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" checked>
+  <img srcset="{% static 'tram-proastiakos.png' %}" alt="responsive image" class="d-block img-fluid"
+      width=22" height="22">
+  </div>
+
+    <div class="form-check" >
+  <input class="form-check-input .text-primary" type="checkbox" id="inlineCheckbox5" value="option5">
+  <p style="font-size:10px;"><img alt="closedimage" srcset="{% static 'disabled.png' %}" alt="responsive image"
+       width=30" height="30">Πρόσβαση Α.Μ.Ε.Α.</p>
+  </div>
+
+    <button type="submit" class="btn btn-primary form-group" id="findButton">Οδηγίες</button>
+  </div>
+</form>
+
+  </div>
+
+
+<div class="directionsResults maps">
+
+{% if directRequest %}
+  <iframe id="mapFrame" src="https://www.google.com/maps/embed/v1/directions?key=AIzaSyB_lbI6ik-ayDeKXXlawS-Oc-gKC-mYw9E&origin={{originRes}}&destination={{destinationRes}}&mode=transit" width="600" height="450" frameborder="0" allowfullscreen=""></iframe>
+{% else %}
+  <iframe id="mapFrame2" src="https://www.google.com/maps/embed/v1/place?key=AIzaSyB_lbI6ik-ayDeKXXlawS-Oc-gKC-mYw9E&q=Αθήνα,+Ελλάδα" width="600" height="450" frameborder="0" allowfullscreen=""></iframe>
+{% endif %}
+</div>
+<!-- Μεγάλου+Αλεξάνδρου+10,+Ίλιον+131+23,+Ελλάδα -->
+<!--Τμήμα+Πληροφορικής+και+Τηλεπικοινωνιών,+Ζωγράφου+161+22,+Ελλάδα-->
+
+{% endblock %}

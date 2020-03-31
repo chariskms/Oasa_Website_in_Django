@@ -1,0 +1,114 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<p class ="text-primary pathTitle"><a href="{% url 'home' %}">Αρχική σελίδα</a> > Επεξεργασία Προφίλ</p>
+
+<div class="container">
+    <h1>Επεξεργασία Προφίλ</h1>
+  	<hr>
+	<div class="row">
+      <!-- left-->
+      <div class="col-md-3">
+        <div class="text-center">
+          <img src="//placehold.it/100" class="avatar img-circle" alt="avatar">
+          <h6>Άλλαξε την φωτογραφία προφίλ...</h6>
+
+          <input type="file" class="form-control">
+        </div>
+      </div>
+
+      <!-- edit form-->
+      <div class="col-md-9 personal-info">
+        <div class="alert alert-info alert-dismissable">
+          <a class="panel-close close" data-dismiss="alert">×</a>
+          <i class="fa fa-coffee"></i>
+          This is an <strong>.alert</strong>. Use this to show important messages to the user.
+        </div>
+        <h3>Προσωπικές Πληροφορίες</h3>
+
+        <form class="form-horizontal" role="form" action="editProfile" method="post">
+            {% csrf_token %}
+          <div class="form-group">
+            <label class="col-lg-3 control-label">* Όνομα:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="{{ user.first_name }}" name="first_name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">* Επώνυμο:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="{{ user.last_name }}" name="last_name">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">* Email:</label>
+            <div class="col-lg-8">
+              <input class="form-control" type="text" value="{{ user.email }}" name="email">
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-lg-3 control-label">* Ιδιότητα Χρήστη:</label>
+            <div class="col-lg-8">
+              <div class="ui-select">
+                <select id="userTypeSelection" class="form-control" name="userType" >
+                  {% if elder %}
+                      <option value="Elder" selected>Ηλικιωμένος</option>
+                  {% else %}
+                      <option value="Elder">Ηλικιωμένος</option>
+                  {% endif %}
+                  {% if unemployed %}
+                      <option value="Unemployed" selected> Άνεργος</option>
+                  {% else %}
+                      <option value="Unemployed"> Άνεργος</option>
+                  {% endif %}
+                  {% if normal %}
+                      <option value="Normal" selected>Χωρίς ιδιότητα</option>
+                  {% else %}
+                      <option value="Normal">Χωρίς ιδιότητα</option>
+                  {% endif %}
+                  {% if reseller %}
+                      <option value="Resellers" selected>Μεταπωλητής</option>
+                  {% else %}
+                      <option value="Resellers">Μεταπωλητής</option>
+                  {% endif %}
+                  {% if student %}
+                      <option value="Student" selected> Φοιτητής</option>
+                  {% else %}
+                      <option value="Student"> Φοιτητής</option>
+                  {% endif %}
+
+                </select>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"> Κωδικός:</label>
+            <div class="col-md-8">
+              <input class="form-control" type="password" value="security" name="password1" >
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-md-3 control-label"> Επιβεβαίωση Κωδικού</label>
+            <div class="col-md-8">
+              <input class="form-control" type="password" value="security" name="password2">
+            </div>
+          </div>
+          <p style="margin-left:300px;">* Μπορούν να αλλάξουν.</p>
+          <div class="form-group">
+            <label class="col-md-3 control-label"></label>
+            <div class="col-md-8">
+              <input type="submit" class="btn btn-primary" value="Save Changes">
+              <span></span>
+              <a href="{% url 'home' %}" class="btn btn-default" >Cancel</a>
+            </div>
+          </div>
+        </form>
+      </div>
+  </div>
+</div>
+<hr>
+
+{% endblock %}

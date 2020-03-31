@@ -1,0 +1,600 @@
+body {
+    font-weight: normal;
+
+}
+
+.navbar{
+    line-height: 90px;
+    margin-left: 50px;
+    margin-bottom: 20px;
+}
+
+
+
+bigMenu{
+    margin-left: 30px;
+
+}
+
+.form-control {
+    width:80%;
+    padding-right: 0.2rem;
+    height: 10%;
+
+}
+
+.form-group{
+
+    margin-left: 10%;
+    margin-right: 3%;
+
+}
+
+.routeBox{
+    border: 10px grey;
+    margin-left: 20%;
+    margin-right: 60%;
+    margin-top: 2%;
+    margin-bottom:20px;
+    background-color:white;
+
+}
+
+label{
+    margin-top: 2%;
+
+}
+
+.form-check{
+    margin-top:10px;
+    margin-bottom:15px;
+
+}
+
+#findButton{
+    margin-top:30px;
+
+}
+
+.labelPlanner{
+    font-weight: bold;
+    color:#46494a !important;
+}
+
+#homeBackground{
+
+    margin-top: 0%;
+    margin-bottom:50px;
+    background-image: url("stasi.jpg");/
+    width: 1000px;
+    height: 351px;
+
+
+}
+.nav-item .dropdown-item{
+    margin-top: -30px;
+    margin-bottom:-30px;
+
+
+
+}
+.navbar .logo{
+    margin-left: 40px;
+    margin-top: 5px;
+}
+
+.dropdown-item, ::after, ::before {
+    box-sizing:initial-box;
+}
+
+#nav-tab{
+    background-color:#1756bd;
+    width: 1000px;
+    margin-top: 60px;
+    margin-left: 100px;
+    height: 60px;
+
+
+}
+
+#navUser-tab{
+    width: 1000px;
+    margin-top: 60px;
+    margin-left: 100px;
+    height: 60px;
+
+
+
+}
+
+#navNav-tab{
+    width: 1000px;
+    margin-top: 60px;
+    margin-left: 100px;
+    height: 60px;
+
+
+
+}
+
+#titleTimetables{
+    margin-right:100px
+
+}
+
+.pathTitle{
+    margin-top: 1%;
+    margin-left:10%;
+
+}
+
+.genericBorder {
+    display: block;
+    height: 100%;
+    border: 0;
+    border-top: 1px solid #ccc;
+    margin: -1.4em 0;
+    padding: 0;
+    padding-bottom:10px;
+    background-color:#e6e7e8;
+}
+
+.itinerariesMenu{
+    width:300px;
+    margin-left:0px;
+    font-size:1.3rem;
+    text-align: center;
+    font-family: Parisine,Gill Sans,Gill Sans MT,Calibri,sans-serif;
+    color:#ffffff;
+    font-weight: bold;
+
+
+}
+.itinerariesMenu:hover{
+    background-color:#2e83d9;
+    color:#ffffff;
+}
+
+#nav-tabContent{
+    margin-left:100px;
+    width:1000px;
+    height:700px;
+    background-color:white;
+}
+#nav-home{
+    width:100%;
+    height:100%;
+}
+
+.metroSearch{
+    margin-top:10px;
+    margin-right:250px;
+}
+
+#busSearchLabelId{
+    margin-top: 70px;
+    font-size:1rem;
+    text-align: center;
+    font-family: Parisine,Gill Sans,Gill Sans MT,Calibri,sans-serif;
+    color:#56585c;
+    font-weight: bold;
+    margin-right:600px;
+}
+
+#busSearchId{
+    margin-top:0px;
+}
+
+#stasiSearchLabelId{
+    margin-top: 70px;
+    font-size:1rem;
+    text-align: center;
+    font-family: Parisine,Gill Sans,Gill Sans MT,Calibri,sans-serif;
+    color:#56585c;
+    font-weight: bold;
+    margin-right:400px;
+}
+
+#stasiSearchAreaLabelId{
+    margin-top: 70px;
+    font-size:1rem;
+    text-align: center;
+    font-family: Parisine,Gill Sans,Gill Sans MT,Calibri,sans-serif;
+    color:#56585c;
+    font-weight: bold;
+    margin-right:300px;
+}
+
+#stasiSearchAreaLabelId,#stasiSearchLabelId{display:inline-block;}
+
+#perioxiSearchLabelId{
+    margin-top: 70px;
+    font-size:1rem;
+    text-align: center;
+    font-family: Parisine,Gill Sans,Gill Sans MT,Calibri,sans-serif;
+    color:#56585c;
+    font-weight: bold;
+    margin-right:300px;
+}
+
+#perioxiameaSearchLabelId{
+    margin-top: 70px;
+    font-size:1rem;
+    text-align: left;
+    font-family: Parisine,Gill Sans,Gill Sans MT,Calibri,sans-serif;
+    color:#56585c;
+    font-weight: bold;
+    margin-right:300px;
+}
+
+#metroRadioLabelId{
+    padding-top: 80px;
+    padding-left:70px;
+    margin-bottom:-90px;
+    font-size:1rem;
+    font-family: Parisine,Gill Sans,Gill Sans MT,Calibri,sans-serif;
+    color:#56585c;
+    font-weight: bold;
+}
+
+#tramRadioLabelId{
+    padding-top: 80px;
+    padding-left:70px;
+    margin-bottom:-90px;
+    font-size:1rem;
+    font-family: Parisine,Gill Sans,Gill Sans MT,Calibri,sans-serif;
+    color:#56585c;
+    font-weight: bold;
+}
+
+.metroLine{
+    margin-left: 70px;
+    margin-top: 120px;
+    font-family: Parisine,Gill Sans,Gill Sans MT,Calibri,sans-serif;
+}
+
+.login-container{
+    margin-top: 5%;
+    margin-bottom: 5%;
+}
+.login-form-1{
+    padding: 5%;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-1 h3{
+    text-align: center;
+    color: #333;
+}
+.login-form-2{
+    padding: 5%;
+    background: #0062cc;
+    box-shadow: 0 5px 8px 0 rgba(0, 0, 0, 0.2), 0 9px 26px 0 rgba(0, 0, 0, 0.19);
+}
+.login-form-2 h3{
+    text-align: center;
+    color: #fff;
+}
+.login-container form{
+    padding: 10%;
+}
+.btnSubmit
+{
+    width: 50%;
+    border-radius: 1rem;
+    padding: 1.5%;
+    border: none;
+    cursor: pointer;
+}
+.login-form-1 .btnSubmit{
+    font-weight: 600;
+    color: #fff;
+    background-color: #0062cc;
+}
+.login-form-2 .btnSubmit{
+    font-weight: 600;
+    color: #0062cc;
+    background-color: #fff;
+}
+.login-form-2 .ForgetPwd{
+    color: #fff;
+    font-weight: 600;
+    text-decoration: none;
+}
+.login-form-1 .ForgetPwd{
+    color: #0062cc;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.login{
+    height: 40px;
+    margin-left:89%;
+    margin-bottom:-29px;
+}
+
+#myTab{
+    margin-left:60px;
+    margin-top:40px;
+
+}
+
+#metroDepartureId{
+   font-size:1rem;
+    text-align: center;
+    font-family: Parisine,Gill Sans,Gill Sans MT,Calibri,sans-serif;
+    color:#56585c;
+    font-weight:bold;
+    margin-right:460px;
+    margin-top:70px;
+}
+
+#myTabContent{
+    width:550px;
+    height:300px;
+    border: 1px solid #e6e7e8;
+    margin-left:60px;
+    background-color:#e6e7e8;
+}
+
+#TabNextIndexId{
+    color:#333;
+    font-family: Helvetica Neue,Helvetica,Arial,Liberation Sans,Lucida Grande,sans-serif;
+    font-size:1rem;
+    margin-top:15px;
+}
+
+#TabLaterIndexId{
+     color:#333;
+    font-family: Helvetica Neue,Helvetica,Arial,Liberation Sans,Lucida Grande,sans-serif;
+    font-size:1rem;
+    margin-top:15px;
+}
+
+.page-footer{
+    background-color:#3272ab
+
+}
+
+
+
+#metro-map{
+    align:center;
+   margin-left:300px;
+}
+
+#mapeuthinis{
+      align:center;
+   margin-left:300px;
+}
+
+ul.gallery{
+margin-left: 3vw;
+margin-right:3vw;
+}
+
+.zoom {
+-webkit-transition: all 0.35s ease-in-out;
+-moz-transition: all 0.35s ease-in-out;
+transition: all 0.35s ease-in-out;
+cursor: -webkit-zoom-in;
+cursor: -moz-zoom-in;
+cursor: zoom-in;
+}
+
+.zoom:hover,
+.zoom:active,
+.zoom:focus {
+
+-ms-transform: scale(1.5);
+-moz-transform: scale(1.5);
+-webkit-transform: scale(1.5);
+-o-transform: scale(1.5);
+transform: scale(1.5);
+position:relative;
+z-index:100;
+}
+
+@media only screen and (max-width: 668px) {
+ul.gallery {
+margin-left: 100vw;
+margin-right: 15vw;
+}
+
+
+.DivName {cursor: pointer}
+}
+
+#nav-tabContent-organsimos{
+    height:300px;
+}
+
+
+
+.imgbox {
+    margin: 0;
+    padding: 0;
+    display: grid;
+    height: 100%;
+}
+
+.conebox{
+      margin: 0;
+    padding: 0;
+    display: grid;
+
+
+}
+
+.center-fit {
+    max-width: 110%;
+    max-height: 100vh;
+    margin: auto;
+}
+
+.conefit{
+     max-width: 45px;
+    max-height: 45px;
+    margin: auto;
+    color:#e6e7e8;
+}
+
+.displ{
+    margin-right: 100px;
+    overflow-y: scroll;
+
+}
+
+.displMetro{
+    margin-top:5px;
+    margin-left:63px;
+}
+
+.helveticaFont{
+    color:#333;
+    font-family: Helvetica Neue,Helvetica,Arial,Liberation Sans,Lucida Grande,sans-serif;
+    font-size:1.5rem;
+}
+
+.editProfile{
+    height: 40px;
+    margin-left:73%;
+    margin-bottom:-48px;
+    margin-top: 0px;
+    vertical-align: bottom;
+
+}
+
+.maps{
+    margin-left: 450px;
+    margin-top: -350px;
+    margin-bottom: 50px;
+
+
+}
+
+.routeBox2{
+    border: 1px grey;
+    margin-left: 50px;
+    margin-right: 850px;
+    margin-top: 2%;
+    margin-bottom:20px;
+    background-color:white;
+
+}
+
+#mapFrame{
+    border: 1px solid #ccc;
+
+}
+#mapFrame2{
+    border: 1px solid #ccc;
+
+}
+#newsBox{
+    margin-left:14%;
+
+}
+
+.newsText1{
+
+    -webkit-border-radius: 0% 0% 100% 100% / 0% 0% 8px 8px;
+    -webkit-box-shadow: rgba(0, 0, 0,.30) 0 2px 3px;
+       height: 250px;
+    width: 350px;
+
+}
+
+.newsText2 {
+  margin: 0;
+  margin-top: 50px;;
+
+   height: 250px;
+    width: 350px;
+  background: #F2F2F2;
+  border: 1px solid #ccc;
+  box-shadow: 1px 1px 2px #fff inset,
+              -1px -1px 2px #fff inset;
+  border-radius: 3px/6px;
+
+
+}
+.card{
+    background-color:#b6bbc2;
+
+}
+
+#news4{
+    margin-left: 10px;
+    margin-top: 10px;
+
+}
+
+#news2{
+    margin-left: 10px;
+    margin-top: 10px;
+
+}
+#news1{
+    margin-left: 10px;
+    margin-top: 10px;
+
+}
+
+#news3{
+    margin-left: 10px;
+    margin-top: 10px;
+
+}
+.newsCards1{
+
+    display:inline-block;
+    height: 350px;
+    width: 300px;
+    margin-left: 10px;
+
+
+}
+
+.newsCards2{
+
+    display:inline-block;
+    height: 350px;
+    width: 300px;
+
+
+}
+
+#card3{
+    margin-bottom:10px;
+    top: -7px; !important
+    margin-left:10px;
+
+}
+
+fa {
+  padding: 100px;
+  font-size: 100px;
+  width: 100px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+.ticketcardinput{
+    height:40px;
+    width:250px;
+    margin-left:-50px;
+    margin-top:20px;
+}
+
+.ticketForm{
+
+    display:inline-block;
+}
+
+.cardOrTicket{
+    height:300px;
+    width:300px;
+
+
+}

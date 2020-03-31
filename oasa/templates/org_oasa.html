@@ -1,0 +1,169 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+        <p class ="text-primary pathTitle"><a href="{% url 'home' %}">Αρχική σελίδα</a> > Οργανισμός ΟΑΣΑ</p>
+
+  <div>
+
+
+        <br>
+        <br>
+
+        <div class="imgbox">
+             <img class="center-fit" src="{% static 'organismos.png' %}" alt="organsimosimage">
+        </div>
+
+        <br>
+        <br>
+        <br>
+        <div style="text-align: center;">
+            <strong>Βρέιτε τις πληροφορίες που επιθυμείτε σχετικά με τον οργανσιμό ΟΑΣΑ! </strong>
+	    </div>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+        <div class="row">
+            <div class="col-4">
+                <div class="list-group" id="list-tab-organ" role="tablist">
+                    <a class="list-group-item list-group-item-action active" id="list-organ-istoria" data-toggle="list" href="#list-istoria" role="tab" aria-controls="list-istoria">ΟΑΣΑ</a>
+                    <a class="list-group-item list-group-item-action" id="list-organ-domi" data-toggle="list" href="#list-domi" role="tab" aria-controls="list-domi">Διοικητική Δομή</a>
+                    <a class="list-group-item list-group-item-action" id="list-organ-katastatiko" data-toggle="list" href="#list-katastatiko" role="tab" aria-controls="list-katastatiko">Ιστορία</a>
+                    <a class="list-group-item list-group-item-action" id="list-organ-etaireies" data-toggle="list" href="#list-etaireies" role="tab" aria-controls="list-etaireies">Εταιρείες Ομίλου</a>
+                 </div>
+            </div>
+
+
+
+
+            <div class="col-8">
+                <div class="tab-content" id="nav-tabContent-organsimos">
+                    <div class="tab-pane fade show active" id="list-istoria" role="tabpanel" aria-labelledby="list-home-list"><p>Ο Οργανισμός Αστικών Συγκοινωνιών Αθηνών είναι ο μεγαλύτερος φορέας συγκοινωνιακού έργου στην Ελλάδα, υπεύθυνος για τον έλεγχο και την λειτουργία των μέσων μαζικής μεταφοράς της Αθήνας, αλλά και της ευρύτερης Μητροπολιτικής περιοχής αυτής.</p>
+                    </div>
+
+                    <div class="tab-pane fade show" id="list-domi" role="tabpanel" aria-labelledby="list-profile-list"><p>
+                        Τα Όργανα Διοίκησης του Ο.Α.Σ.Α. είναι:
+
+                        Το Διοικητικό Συμβούλιο είναι το Ανώτατο Διοικητικό και το κατ’ εξοχήν Αποφασιστικό Οργανο του Οργανισμού και είναι αρμόδιο να αποφασίζει, να εποπτεύει και να ασκεί έλεγχο σε κάθε θέμα που αφορά στην οργάνωση, στη διοίκηση, στη λειτουργία, στη διαχείριση της περιουσίας και γενικά στη δραστηριότητα και στην επιδίωξη των σκοπών του Οργανισμού.
+
+                        Τα μέλη του Δ.Σ. είναι τα ακόλουθα :
+
+                        Σκουμπούρης Ιωάννης του Νικολάου και της Σοφίας – Χημικός Μηχανικός, Πρόεδρος Δ.Σ. – μη Εκτελεστικό Μέλος Δ.Σ.
+                        Αθανασόπουλος Νικόλαος του Χαράλαμπου και της Μαρίας – Ηλεκτρολόγος Μηχανικός, Διευθύνων Σύμβουλος – Εκτελεστικό Μέλος Δ.Σ.
+                        Αμδίτης Άγγελος του Ιωάννη και της Φωτεινής – Ηλεκτρολόγος Μηχανικός – Αναπληρωτής Πρόεδρος Δ.Σ. – Ανεξάρτητο μη Εκτελεστικό Μέλος Δ.Σ.
+                        Καλατζής Νικόλαος του Εμμανουήλ και της Στυλιανής – Οικονομολόγος – Ορκωτός Ελεγκτής Λογιστής – Ανεξάρτητο μη Εκτελεστικό Μέλος Δ.Σ.
+                        Κεφαλά Βασιλική του Διαμαντή και της Ελένης – Οικονομολόγος – Ανεξάρτητο μη Εκτελεστικό Μέλος Δ.Σ.
+                        Δημητρακοπούλου Βασιλική του Αναστασίου και της Φωτεινής – Δικηγόρος – μη Εκτελεστικό Μέλος Δ.Σ.
+                        Παπαδόπουλος Παύλος του Φωτίου και της Ουρανίας – υπάλληλος του Ο.Α.Σ.Α. – εκπρόσωπος των εργαζομένων – μη Εκτελεστικό Μέλος Δ.Σ.</p>
+                    </div>
+                    <div class="tab-pane fade show" id="list-katastatiko" role="tabpanel" aria-labelledby="list-messages-list">
+
+
+                                <div class="timeline">
+                                    <div class="timeline__group">
+                                        <span class="timeline__year">Αρχές του 20ου αιώνα</span>
+                                        <div class="timeline__box">
+
+                                            <div class="timeline__post">
+                                                <div class="timeline__content">
+                                                    <p>Η εξέλιξη των δημόσιων συγκοινωνιών στην Αθήνα συνδέεται στενά με την αστική ανάπτυξη και την ανάγκη αστικών μετακινήσεων, που ξεκίνησαν στις αρχές του περασμένου αιώνα.
+                                                        Αρχικά οι Αστικές Συγκοινωνίες της Πρωτεύουσας λειτουργούσαν από ιδιώτες ιδιοκτήτες λεωφορείων, στους οποίους το Ελληνικό Δημόσιο είχε παραχωρήσει άδειες για εκτέλεση Αστικής Συγκοινωνίας.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="timeline__group">
+                                        <span class="timeline__year">1925</span>
+                                        <div class="timeline__box">
+
+                                            <div class="timeline__post">
+                                                <div class="timeline__content">
+                                                    <p>Ιδρύεται η πρώτη εταιρεία Αστικής Συγκοινωνίας στην Αθήνα με την επωνυμία Ελληνικοί Ηλεκτρικοί Σιδηρόδρομοι (Ε.Η.Σ.) Σκοπός της είναι η λειτουργία του υπόγειου σιδηρόδρομου από τον Πειραιά μέχρι τα βόρεια προάστια της Αθήνας.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+	                                <div class="timeline__group">
+                                        <span class="timeline__year">1941</span>
+                                        <div class="timeline__box">
+
+                                            <div class="timeline__post">
+                                                <div class="timeline__content">
+                                                    <p>Ιδρύεται ο Οργανισμός Ελέγχου Αστικών Συγκοινωνιών (Ο.Ε.Α.Σ.) με σκοπό τον έλεγχο και την εποπτεία της παρεχόμενης εξυπηρέτησης από τους ιδιώτες λεωφορειούχους.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+	                                <div class="timeline__group">
+                                        <span class="timeline__year">1961</span>
+                                        <div class="timeline__box">
+
+                                            <div class="timeline__post">
+                                                <div class="timeline__content">
+                                                    <p>
+                                                        Ιδρύεται η πρώτη κρατική εταιρεία αστικών συγκοινωνιών με την επωνυμία Αστικές Συγκοινωνίες Περιοχής Αθηνών (Α.Σ.Π.Α.), γνωστή και ως 7ο Κ.Τ.Ε.Λ.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+                                	 <div class="timeline__group">
+                                         <span class="timeline__year">1976</span>
+                                         <div class="timeline__box">
+
+                                           <div class="timeline__post">
+                                             <div class="timeline__content">
+                                               <p>
+                                    			Το Ελληνικό Δημόσιο αγοράζει την εταιρεία Ελληνικοί Ηλεκτρικοί Σιδηρόδρομοι (Ε.Η.Σ.) και ιδρύει μια νέα ανώνυμη εταιρεία με την επωνυμία Ηλεκτρικοί Σιδηρόδρομοι Αθηνών Πειραιώς (Η.Σ.Α.Π.), η οποία αναλαμβάνει τη λειτουργία του ηλεκτρικού σιδηροδρόμου και των λίγων λεωφορειακών γραμμών που διατηρούσε η προκάτοχός της Ε.Η.Σ. (γραμμή 1).
+                                                </p>
+                                             </div>
+                                           </div>
+                                         </div>
+                                      </div>
+
+                                </div>
+
+                    </div>
+
+
+
+                    <div class="tab-pane fade show" id="list-etaireies" role="tabpanel" aria-labelledby="list-settings-list">Οι δύο θυγατρικές εταιρείες του οργανισμού (ΟΣΥ και ΣΤΑΣΥ) αναλαμβάνουν την διαχείριση των οδικών και σιδηροδρομικών μέσων που βρίσκονται υπό την εποπτεία του: Μητροπολιτικός Σιδηρόδρομος (Μετρό), Προαστιακός Σιδηρόδρομος, Τραμ, Αστικά λεωφορεία / Τρόλεϊ. </div>
+                </div>
+            </div>
+        </div>
+
+      </div>
+<br>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+{% endblock %}

@@ -1,0 +1,176 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<div class="border" id="homeBackground" style="height:351px;">
+
+<div class="routeBox rounded-lg" style="margin-top:2px; height:340px;">
+<form class="border rounded-lg " style="height:350px;" action="directions" method="get">
+  <div class="form-group">
+    <label for="Input1"> <h5><small  class="text-secondary labelPlanner">Σχεδιάστε τη διαδρομή σας</small></h5></label>
+    <input type="Από" class="form-control" id="Input1" placeholder="Από" name="origin">
+  </div>
+  <div class="form-group">
+    <input type="Προς" class="form-control" id="Input2" placeholder="Προς" name="destination">
+
+
+    <div class="form-check form-check-inline">
+    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1" checked>
+      <img srcset="{% static 'bus.png' %}" alt="responsive image" class="d-block img-fluid"
+      width=22" height="22">
+    </div>
+
+  <div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2" checked>
+  <img srcset="{% static 'metro.png' %}" alt="responsive image" class="d-block img-fluid"
+      width=22" height="22">
+  </div>
+
+  <div class="form-check form-check-inline">
+  <input class="form-check-input" type="checkbox" id="inlineCheckbox3" value="option3" checked>
+  <img srcset="{% static 'tram-proastiakos.png' %}" alt="responsive image" class="d-block img-fluid"
+      width=22" height="22">
+  </div>
+    <div class="form-check" >
+  <input class="form-check-input .text-primary" type="checkbox" id="inlineCheckbox5" value="option5">
+  <p style="font-size:10px;"><img alt="closedimage" srcset="{% static 'disabled.png' %}" alt="responsive image"
+       width=30" height="30">Πρόσβαση Α.Μ.Ε.Α.</p>
+  </div>
+    <button type="submit" style="margin-top:15px;" class="btn btn-primary form-group" id="findButton">Οδηγίες</button>
+  </div>
+</form>
+
+  </div>
+</div>
+     <div style="text-align: center; margin-bottom:70px; font-weight: bold; color:#3e4042"><h4>Ανακοινώσεις και τροποποιήσεις προγράμματος!<img class="conefit" src="{% static 'cone.png' %}" alt="closedimage"></h4>
+     </div>
+        <!--
+        <div class="imgbox">
+             <img class="conefit" src="{% static 'construction.png' %}" alt="closedimage">
+        </div>
+        -->
+<!--
+<div id="newsBox">
+  <div class="newsText1 form-group" id ="news1" style="display: inline-block;">
+    <div class="newsText2 form-group" style="margin-top:0px;">
+      <h4 style="text-align: center;font-weight: bold;"><small>ΑΛΛΑΓΕΣ ΔΡΟΜΟΛΟΓΙΩΝ</small></h4>
+      <p id="simera" style="text-align: center;"></p>
+        <ul>
+            <li>14.01.20 Προσωρινή Τροποποίηση της Γραμμής 891. </li>
+            <li>19.12.19 Προσωρινή Τροποποίηση των Γραμμών 725, 726 και Α10. </li>
+          <br>
+
+
+          </ul>
+  </div>
+</div>
+
+  <div class="newsText1 form-group" id ="news2" style="display: inline-block;">
+    <div class="newsText2 form-group" style="margin-top:0px;">
+
+      <h4 style="text-align: center;font-weight: bold;"><small>ΑΛΛΑΓΕΣ ΩΡΑΡΙΩΝ</small></h4>
+      <p id="avrio" style="text-align: center;"></p>
+        <ul>
+            <li>31.12.19 Λειτουργία ΜΜΜ την Παραμονή Πρωτοχρονιάς 31-12-2019 </li>
+          <li>30.12.19 Μεταβολές λεωφορειακών γραμμών λόγω έντονων καιρικών φαινομένων. </li>
+
+          </ul>
+    </div>
+  </div>
+
+
+  <div class="newsText1 form-group" id ="news3" style="display: inline-block;">
+    <div class="newsText2 form-group" style="margin-top:0px;">
+      <h4 style="text-align: center;font-weight: bold;"><small>ΔΙΑΚΟΠΗ ΓΡΑΜΜΩΝ</small></h4>
+      <p id="next" style="text-align: center;"></p>
+          <ul>
+            <li>Αναστολή των Λεωφορειακών Γραμμών 242, 250 και Ε90. </li>
+            <br>
+            <br>
+            <br>
+
+          </ul>
+    </div>
+  </div>
+
+  <div class="newsText1 form-group" id ="news4" style="display: inline-block;">
+    <div class="newsText2 form-group" style="margin-top:0px;">
+      <h4 style="text-align: center;font-weight: bold;"><small>ΑΛΛΑΓΕΣ ΩΡΑΡΙΩΝ</small></h4>
+      <p id="next2" style="text-align: center;"></p>
+        <ul>
+            <li>31.12.19 Λειτουργία ΜΜΜ την Παραμονή Πρωτοχρονιάς 31-12-2019 </li>
+          <li>30.12.19 Μεταβολές λεωφορειακών γραμμών λόγω έντονων καιρικών φαινομένων. </li>
+
+          </ul>
+    </div>
+  </div>
+-->
+
+
+  <div class="card bg-light mb-3 newsCards1" style="max-width: 18rem;">
+  <div class="card-header">ΑΛΛΑΓΕΣ ΔΡΟΜΟΛΟΓΙΩΝ</div>
+  <div class="card-body">
+
+    <p class="card-text"> <ul>
+            <li>14.01.20 Προσωρινή Τροποποίηση της Γραμμής 891. </li>
+            <li>19.12.19 Προσωρινή Τροποποίηση των Γραμμών 725, 726 και Α10. </li>
+          <br>
+
+
+          </ul></p>
+  </div>
+</div>
+
+  <div class="card bg-light mb-3 newsCards1" style="max-width: 18rem;">
+  <div class="card-header">AΛΛΑΓΕΣ ΩΡΑΡΙΩΝ</div>
+  <div class="card-body">
+    <p class="card-text"><ul>
+            <li>31.12.19 Λειτουργία ΜΜΜ την Παραμονή Πρωτοχρονιάς 31-12-2019 </li>
+          <li>30.12.19 Μεταβολές λεωφορειακών γραμμών λόγω έντονων καιρικών φαινομένων. </li>
+
+          </ul></p>
+  </div>
+</div>
+
+  <div class="card bg-light mb-3 newsCards2" id="card3" style="max-width: 18rem; margin-bottom:1opx;">
+  <div class="card-header">ΔΙΑΚΟΠΗ ΓΡΑΜΜΩΝ</div>
+  <div class="card-body">
+
+    <p class="card-text"><ul>
+            <li>Αναστολή των Λεωφορειακών Γραμμών 242, 250 και Ε90. </li>
+          <br>
+          <br>
+
+
+          </ul>.</p>
+  </div>
+</div>
+
+  <div class="card bg-light mb-3 newsCards2"  style=" max-width: 18rem;">
+  <div class="card-header" >ΔΡΑΣΕΙΣ</div>
+  <div class="card-body">
+    <p class="card-text"><ul>
+            <li>Διαρκής αστυνόμευση για παράνομα σταθμευμένα οχήματα σε στάσεις. </li>
+            <li>Οριζόντιες σημάνσεις “ΣΤΑΣΗ ΟΑΣΑ”. </li>
+        <br>
+        <br>
+
+
+          </ul></p>
+  </div>
+
+
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+</div>
+
+</div>
+
+{% endblock %}

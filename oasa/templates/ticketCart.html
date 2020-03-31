@@ -1,0 +1,344 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<p class ="text-primary pathTitle"><a href="{% url 'home' %}">Αρχική σελίδα</a> > <a href="{% url 'tickets' %}">Εισιτήρια</a> > Αγορά Εισιτηρίων</p>
+
+<ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+  	<li class="nav-item">
+    	<a class="nav-link active" id="agora-tab" data-toggle="pill" href="#agora" role="tab" aria-controls="agora" aria-selected="true">Αγορά</a>
+  	</li>
+  	<li class="nav-item">
+    	<a class="nav-link" id="epanafortisi-tab" data-toggle="pill" href="#epanafortisi" role="tab" aria-controls="epanafortisi" aria-selected="false">Επαναφόρτιση</a>
+  	</li>
+</ul>
+<br>
+<br>
+<br>
+<div class="tab-content" id="pills-tabContent" >
+  	<div class="tab-pane fade show active" id="agora" role="tabpanel" aria-labelledby="agora-tab">
+		{% if user.is_authenticated %}
+
+
+			<h5 style="margin-left:170px;">Αγορά εισιτηρίων Athena tickets</h5>
+
+
+			<form action="ticketCart" method="get">
+
+
+  				<div class="form-group row">
+					<label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+    				<div class="col-sm-10 ">
+						<input type="email" class="form-control ticketcardinput" id="inputUserEmail3" value="{{user.email}}">
+    				</div>
+  				</div>
+  				<div class="form-group row">
+    				<label for="inputName" class="col-sm-2 col-form-label">Όνομα</label>
+					<div class="col-sm-10 ">
+      					<input type="text" class="form-control ticketcardinput" id="inputUserName" value="{{user.first_name}}">
+    				</div>
+  				</div>
+				<div class="form-group row">
+    				<label for="inputFullName" class="col-sm-2 col-form-label">Επώνυμο</label>
+					<div class="col-sm-10 " >
+      					<input type="text" class="form-control ticketcardinput" id="inputUserFullName" value="{{user.last_name}}">
+    				</div>
+  				</div>
+				<div class="form-group" style="margin-right:200px;"><p style="margin-left:20px;">Eπιλέξτε τον τύπο εισιτηρίου</p>
+                            <select id="userUserTypeSelection" name="ticketType" style="height:40px; width:250px;" class="form-control" >
+                                <option value="oneRoute"> 90 λεπτών</option>
+								<option value="doubleRoute"> Δύο διαδρομών</option>
+                                <option value="dayTicket">24 ωρών</option>
+                                <option value="fiveDays">5 ημερών</option>
+                                <option value="airport">Αεροδρομίου</option>
+                            </select>
+                </div>
+				<div class="col-md-12 pd-10" style="margin-left:100px;">
+	    			<div class="col-md-2"><p>Ποσότητα</p> </div>
+					<div class="col-md-4"><INPUT id="txtUserNumber" placeholder="Ποσότητα" onkeypress="return isNumberKey(event)"   type="text" name="quantity">  </div>
+				</div>
+
+				<br>
+				<br>
+
+				<div class="form-group row">
+    				<div class="col-sm-10">
+      					<p><button type="submit" class="btn btn-primary">Έλεγχος τιμής</button><br><br>Συνολικό Ποσό: {{price}}<p><br> <button type="submit" class="btn btn-primary">Αγορά</button> </p> </p>
+    				</div>
+  				</div>
+
+				<br>
+				<br>
+			</form>
+
+
+		{% else %}
+
+			<h5 style="margin-left:170px;">Αγορά εισιτηρίων Athena tickets</h5>
+
+
+			<form action="ticketCart" method="get">
+
+
+
+  				<div class="form-group row">
+					<label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+    				<div class="col-sm-10 ">
+						<input type="email" class="form-control ticketcardinput" id="inputEmail3" value=" ">
+    				</div>
+  				</div>
+  				<div class="form-group row">
+    				<label for="inputName" class="col-sm-2 col-form-label">Όνομα</label>
+					<div class="col-sm-10 ">
+      					<input type="text" class="form-control ticketcardinput" id="inputName" value=" ">
+    				</div>
+  				</div>
+				<div class="form-group row">
+    				<label for="inputFullName" class="col-sm-2 col-form-label">Επώνυμο</label>
+					<div class="col-sm-10 " >
+      					<input type="text" class="form-control ticketcardinput" id="inputFullName" value=" ">
+    				</div>
+  				</div>
+				<div class="form-group" style="margin-right:200px;"><p style="margin-left:20px;">Eπιλέξτε τον τύπο εισιτηρίου</p>
+                            <select id="userTypeSelection" name="ticketType" style="height:40px; width:250px;" class="form-control">
+                           		<option value="oneRoute"> 90 λεπτών</option>
+								<option value="doubleRoute"> Δύο διαδρομών</option>
+                                <option value="dayTicket">24 ωρών</option>
+                                <option value="fiveDays">5 ημερών</option>
+                                <option value="airport">Αεροδρομίου</option>
+                            </select>
+                </div>
+				<div class="col-md-12 pd-10" style="margin-left:100px;">
+	    			<div class="col-md-2"><p>Ποσότητα</p> </div>
+					<div class="col-md-4"><INPUT id="txtNumber" placeholder="Ποσότητα" onkeypress="return isNumberKey(event)"   type="text" name="quantity">  </div>
+				</div>
+
+				<br>
+				<br>
+
+				<div class="form-group row">
+    				<div class="col-sm-10">
+      					<p><button type="submit" class="btn btn-primary">Έλεγχος τιμής</button><br><br>Συνολικό Ποσό: {{price}}<p><br> <button type="submit" class="btn btn-primary">Αγορά</button> </p> </p>
+    				</div>
+  				</div>
+
+				<br>
+				<br>
+			</form>
+
+
+
+
+		{% endif %}
+
+
+
+
+	</div>
+  	<div class="tab-pane fade" id="epanafortisi" role="tabpanel" aria-labelledby="epanafortisi-tab">
+		{% if user.is_authenticated %}
+
+
+			<h5 style="margin-left:170px;">Επαναφόρτιση εισιτηρίων Athena tickets</h5>
+
+
+			<form action="loadCard" method="get">
+
+				<div class="col-md-12 pd-10" style="margin-left:100px;">
+	    			<div class="col-md-2"><p>Αριθμός Εισιτηρίου ή Ηλεκτρονικής κάρτας</p> </div>
+					<div class="col-md-4"><INPUT style="width:250px;" id="ticketUserNumber" placeholder="ΧΧΧΧ - ΧΧΧΧ - ΧΧΧΧ - ΧΧΧΧ" onkeypress="return isNumberKey(event)"   type="text" name="ticketID">  </div>
+				</div>
+
+  				<div class="form-group row">
+					<label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+    				<div class="col-sm-10 ">
+						<input type="email" class="form-control ticketcardinput" id="inputUserUpdateEmail3" value="{{user.email}}">
+    				</div>
+  				</div>
+  				<div class="form-group row">
+    				<label for="inputName" class="col-sm-2 col-form-label">Όνομα</label>
+					<div class="col-sm-10 ">
+      					<input type="text" class="form-control ticketcardinput" id="inputUserUpdateName" value="{{user.first_name}}">
+    				</div>
+  				</div>
+				<div class="form-group row">
+    				<label for="inputFullName" class="col-sm-2 col-form-label">Επώνυμο</label>
+					<div class="col-sm-10 " >
+      					<input type="text" class="form-control ticketcardinput" id="inputUserUpdateFullName" value="{{user.last_name}}">
+    				</div>
+  				</div>
+
+				<nav style="margin-left:30px">
+  					<div class="nav nav-tabs cardOrTicket rounded-lg" id="navUser-tab" role="tablist"  style="width:177px;background-color:#dbebff; border-color:#dbebff;">
+						<a class="nav-item nav-link active " id="UpdateUserCard-tab" data-toggle="tab" href="#UpdateUserCard" role="tab" aria-controls="UpdateUserCard" aria-selected="true">Κάρτα</a>
+    					<a class="nav-item nav-link " id="UpdateUserTicket-tab" data-toggle="tab" href="#UpdateUserTicket" role="tab" aria-controls="UpdateUserTicket" aria-selected="false">Eισιτήριο</a>
+  					</div>
+				</nav>
+					<div class="tab-content" id="nav-tabUserContent2">
+  						<div class="tab-pane fade" id="UpdateUserTicket" role="tabpanel" aria-labelledby="UpdateUserTicket-tab">
+
+
+							<div class="form-group" style="margin-right:100px;"><p style="margin-left:20px;">Eπιλέξτε τον τύπο εισιτηρίου</p>
+                            <select id="userUserUpdateTypeSelection" name="ticketType" style="height:40px; width:250px;" class="form-control">
+                                <option value="oneRoute"> 90 λεπτών</option>
+								<option value="doubleRoute"> Δύο διαδρομών</option>
+                                <option value="dayTicket">24 ωρών</option>
+                                <option value="fiveDays">5 ημερών</option>
+                                <option value="airport">Αεροδρομίου</option>
+                            </select>
+                			</div>
+							<div class="col-md-12 pd-10" style="margin-left:100px;">
+	    					<div class="col-md-2"><p>Ποσότητα</p> </div>
+							<div class="col-md-4"><INPUT id="txtUserUpdateNumber" placeholder="Ποσότητα" onkeypress="return isNumberKey(event)"   type="text" name="quantity">  </div>
+						</div>
+
+
+						</div>
+  						<div class="tab-pane fade show active" id="UpdateUserCard" role="tabpanel" aria-labelledby="UpdateUserCard-tab">
+
+							<div class="form-group" style="margin-right:200px;"><p style="margin-left:20px;">Eπιλέξτε τον τύπο εισιτηρίου</p>
+                            <select id="userUserUpdateTypeSelectionCard" name="ticketType" style="height:40px; width:250px;" class="form-control">
+                                <option value="oneRoute"> 90 λεπτών</option>
+								<option value="doubleRoute"> Δύο διαδρομών</option>
+                                <option value="dayTicket">24 ωρών</option>
+                                <option value="fiveDays">5 ημερών</option>
+                                <option value="airport">Αεροδρομίου</option>
+                            </select>
+                			</div>
+							<div class="col-md-12 pd-10" style="margin-left:100px;">
+	    					<div class="col-md-2"><p>Ποσότητα</p> </div>
+							<div class="col-md-4"><INPUT id="txtUserUpdateNumberCard" placeholder="Ποσότητα" onkeypress="return isNumberKey(event)"   type="text" name="quantity">  </div>
+							</div>
+
+							<div class="col-md-12 pd-10" style="margin-left:100px; margin-top:20px;">
+	    					<div class="col-md-2"><p style="width:300px;">Ηλεκτρονικό Πορτοφόλι</p> </div>
+							<div class="col-md-4"><INPUT id="Userwallet" placeholder="Χρήματα" onkeypress="return isNumberKey(event)"   type="text" name="txtNumber">  </div>
+							</div>
+
+						</div>
+
+					</div>
+				<br>
+				<br>
+
+				<div class="form-group row">
+    				<div class="col-sm-10">
+      					<p><button type="submit" class="btn btn-primary">Έλεγχος τιμής</button><br><br>Συνολικό Ποσό: {{price}}<p><br> <button type="submit" class="btn btn-primary">Αγορά</button> </p> </p>
+    				</div>
+  				</div>
+
+				<br>
+				<br>
+			</form>
+
+
+
+		{% else %}
+
+
+			<h5 style="margin-left:170px;">Επαναφόρτιση εισιτηρίων Athena tickets</h5>
+
+
+			<form action="loadCard" method="get" >
+
+				<div class="col-md-12 pd-10" style="margin-left:100px;">
+	    			<div class="col-md-2"><p>Αριθμός Εισιτηρίου ή Ηλεκτρονικής κάρτας</p> </div>
+					<div class="col-md-4"><INPUT style="width:250px;" id="ticketNumber" placeholder="ΧΧΧΧ - ΧΧΧΧ - ΧΧΧΧ - ΧΧΧΧ" onkeypress="return isNumberKey(event)"   type="text" name="txtNumber">  </div>
+				</div>
+
+  				<div class="form-group row">
+					<label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
+    				<div class="col-sm-10 ">
+						<input type="email" class="form-control ticketcardinput" id="inputUpdateEmail3" value=" ">
+    				</div>
+  				</div>
+  				<div class="form-group row">
+    				<label for="inputName" class="col-sm-2 col-form-label">Όνομα</label>
+					<div class="col-sm-10 ">
+      					<input type="text" class="form-control ticketcardinput" id="inputUpdateName" value=" ">
+    				</div>
+  				</div>
+				<div class="form-group row">
+    				<label for="inputFullName" class="col-sm-2 col-form-label">Επώνυμο</label>
+					<div class="col-sm-10 " >
+      					<input type="text" class="form-control ticketcardinput" id="inputUpdateFullName" value=" ">
+    				</div>
+  				</div>
+
+				<nav style="margin-left:30px">
+  					<div class="nav nav-tabs cardOrTicket rounded-lg" id="navNav-tab" role="tablist"  style="width:177px;background-color:#dbebff; border-color:#dbebff;">
+						<a class="nav-item nav-link active " id="UpdateCard-tab" data-toggle="tab" href="#UpdateCard" role="tab" aria-controls="UpdateCard" aria-selected="true">Κάρτα</a>
+    					<a class="nav-item nav-link " id="UpdateTicket-tab" data-toggle="tab" href="#UpdateTicket" role="tab" aria-controls="UpdateTicket" aria-selected="false">Eισιτήριο</a>
+  					</div>
+				</nav>
+					<div class="tab-content" id="nav-tabContent2">
+  						<div class="tab-pane fade" id="UpdateTicket" role="tabpanel" aria-labelledby="UpdateTicket-tab">
+
+
+							<div class="form-group" style="margin-right:100px;"><p style="margin-left:20px;">Eπιλέξτε τον τύπο εισιτηρίου</p>
+                            <select id="userUpdateTypeSelection" name="ticketType" style="height:40px; width:250px;" class="form-control">
+                                <option value="oneRoute"> 90 λεπτών</option>
+								<option value="doubleRoute"> Δύο διαδρομών</option>
+                                <option value="dayTicket">24 ωρών</option>
+                                <option value="fiveDays">5 ημερών</option>
+                                <option value="airport">Αεροδρομίου</option>
+                            </select>
+                			</div>
+							<div class="col-md-12 pd-10" style="margin-left:100px;">
+	    					<div class="col-md-2"><p>Ποσότητα</p> </div>
+							<div class="col-md-4"><INPUT id="txtUpdateNumber" placeholder="Ποσότητα" onkeypress="return isNumberKey(event)"   type="text" name="quantity">  </div>
+						</div>
+
+
+						</div>
+  						<div class="tab-pane fade show active" id="UpdateCard" role="tabpanel" aria-labelledby="UpdateCard-tab">
+
+							<div class="form-group" style="margin-right:200px;"><p style="margin-left:20px;">Eπιλέξτε τον τύπο εισιτηρίου</p>
+                            <select id="userUpdateTypeSelectionCard" name="ticketType" style="height:40px; width:250px;" class="form-control">
+                                <option value="oneRoute"> 90 λεπτών</option>
+								<option value="doubleRoute"> Δύο διαδρομών</option>
+                                <option value="dayTicket">24 ωρών</option>
+                                <option value="fiveDays">5 ημερών</option>
+                                <option value="airport">Αεροδρομίου</option>
+                            </select>
+                			</div>
+							<div class="col-md-12 pd-10" style="margin-left:100px;">
+	    					<div class="col-md-2"><p>Ποσότητα</p> </div>
+							<div class="col-md-4"><INPUT id="txtUpdateNumberCard" placeholder="Ποσότητα" onkeypress="return isNumberKey(event)"   type="text" name="quantity">  </div>
+							</div>
+
+							<div class="col-md-12 pd-10" style="margin-left:100px; margin-top:20px;">
+	    					<div class="col-md-2"><p style="width:300px;">Ηλεκτρονικό Πορτοφόλι</p> </div>
+							<div class="col-md-4"><INPUT id="wallet" placeholder="Χρήματα" onkeypress="return isNumberKey(event)"   type="text" name="wallet">  </div>
+							</div>
+
+
+
+
+						</div>
+
+					</div>
+				<br>
+				<br>
+				<br>
+
+				<div class="form-group row">
+    				<div class="col-sm-10">
+      					    <p><button type="submit" class="btn btn-primary">Έλεγχος τιμής</button><br><br>Συνολικό Ποσό: {{price}}<p><br> <button type="submit" class="btn btn-primary">Αγορά</button> </p> </p>
+    				</div>
+  				</div>
+
+				<br>
+				<br>
+			</form>
+
+
+
+		{% endif %}
+
+	</div>
+</div>
+
+{% endblock %}

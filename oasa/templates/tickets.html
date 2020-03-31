@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+{% load static %}
+
+<p class ="text-primary pathTitle"><a href="{% url 'home' %}">Αρχική σελίδα</a> > Εισιτήρια</p>
+
+<a class="btn btn-primary login" style="height:40px; margin-left:86%;" href="{% url 'ticketCart' %}" role="button">Αγορά Εισιτηρίων</a>
+
+<!/h3><!a href="#" class="btn btn-default"><!img class="conefit" src="{% static 'info.png' %}" alt="closedimage"><!/a>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
+<img style=" margin-left: 200px; margin-top:-100px;"src="{% static 'under-construction.webp' %}" alt="metro-map" width="800" height="300">
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}
